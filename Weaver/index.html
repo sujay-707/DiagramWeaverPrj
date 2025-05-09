@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagram Weaver</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <!-- <header>
+    <div class="logo-container">
+      <div class="logo">DSV</div>
+      <h1>Diagram Weaver</h1>
+    </div>
+    <div class="controls">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <svg id="light-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+        </svg>
+        <svg id="dark-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+        </svg>
+      </button>
+      <button id="help-toggle" aria-label="Toggle help panel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z"/>
+        </svg>
+      </button>
+    </div>
+  </header> -->
+
+  <header>
+  <div class="logo-container">
+    <div class="logo">DW</div>
+    <h1>Diagram Weaver</h1>
+  </div>
+
+  <div class="controls">
+  <!-- New navigation links -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#login">Login</a>
+  </nav>
+
+
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <!-- Light mode icon -->
+      <svg id="light-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+      </svg>
+
+      <!-- Dark mode icon -->
+      <svg id="dark-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+      </svg>
+    </button>
+
+    <button id="help-toggle" aria-label="Toggle help panel">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+
+  <main>
+    <div class="editor-container">
+      <div class="editor-header">
+        <select id="template-select">
+          <option value="">Select a template...</option>
+          <!-- Templates will be added via JavaScript -->
+        </select>
+        <div class="editor-buttons">
+          <button id="copy-btn" class="icon-button" aria-label="Copy to clipboard">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+              <path fill="none" d="M0 0h24v24H0z"/>
+              <path d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"/>
+            </svg>
+          </button>
+          <button id="clear-btn" class="icon-button" aria-label="Clear editor">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+              <path fill="none" d="M0 0h24v24H0z"/>
+              <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <textarea id="mermaid-input" placeholder="Enter Mermaid.js syntax here..."></textarea>
+      <div class="editor-footer">
+        <button id="generate-btn" class="primary-button">Generate Diagram</button>
+      </div>
+    </div>
+
+    <div class="output-container">
+      <div class="output-header">
+        <h2>Rendered Diagram</h2>
+        <div class="export-buttons">
+          <button id="export-png" class="secondary-button">Export as PNG</button>
+          <button id="export-svg" class="secondary-button">Export as SVG</button>
+        </div>
+      </div>
+      <div id="mermaid-output"></div>
+    </div>
+  </main>
+
+  <div id="help-panel" class="help-panel">
+    <div class="help-header">
+      <h2>Mermaid.js Syntax Guide</h2>
+      <button id="close-help" aria-label="Close help panel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="help-content">
+      <div class="help-section">
+        <h3>Flowchart</h3>
+        <pre><code>flowchart TD
+    A[Start] --&gt; B{Is it?}
+    B --&gt;|Yes| C[OK]
+    B --&gt;|No| D[End]</code></pre>
+      </div>
+      <div class="help-section">
+        <h3>Sequence Diagram</h3>
+        <pre><code>sequenceDiagram
+    Alice-&gt;&gt;John: Hello John, how are you?
+    John--&gt;&gt;Alice: Great!
+    Alice-)John: See you later!</code></pre>
+      </div>
+      <div class="help-section">
+        <h3>Class Diagram</h3>
+        <pre><code>classDiagram
+    Animal &lt;|-- Duck
+    Animal &lt;|-- Fish
+    Animal &lt;|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+      +String beakColor
+      +swim()
+      +quack()
+    }</code></pre>
+      </div>
+      <div class="help-section">
+        <h3>Entity Relationship</h3>
+        <pre><code>erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses</code></pre>
+      </div>
+      <div class="help-section">
+        <h3>Gantt Chart</h3>
+        <pre><code>gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task     :24d</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="templates.js" type="module"></script>
+  <script src="export.js" type="module"></script>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
