@@ -189,6 +189,7 @@ h1 {
   display: none;
 }
 
+
 /* Main content */
 main {
   display: grid;
@@ -513,3 +514,39 @@ main {
     width: 100%;
   }
 }
+
+
+
+.about-container {
+  max-width: 90%;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgb(240, 247, 247);
+  border-radius: 12px;
+  border: 3px solid rgb(10, 9, 9);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+h2 {
+  color: #34495e;
+  margin-top: 30px;
+}
+
+p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.7;
+  color: #555;
+}
+
+
