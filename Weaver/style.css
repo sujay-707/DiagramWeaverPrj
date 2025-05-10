@@ -120,6 +120,10 @@ body.dark-theme .navbar a:hover {
   color: #3b82f6; /* Dark theme hover color */
 }
 
+body.dark-theme h1 {
+  color: #e2e8f0; /* Dark theme link color */
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -550,3 +554,4 @@ ul {
 }
 
 
+  
